@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:mockito/mockito.dart';
@@ -25,7 +26,7 @@ void main() {
 
       // Assert
       expect(PlatformMapsPlatform.instance, isA<PlatformMapsGoogleWeb>());
-    });
+    }, skip: !kIsWeb,);
 
     test('should create a GoogleMapsWidget when calling createPlatformMapsPlatformWidget', () {
       // Arrange
@@ -36,7 +37,7 @@ void main() {
 
       // Assert
       expect(widget, isA<GoogleMapsWidget>());
-    });
+    }, skip: !kIsWeb,);
 
     test('should create a GoogleMapsPlatformBitmapDescriptor when calling createBitmapDescriptor', () {
       // Act
@@ -44,7 +45,7 @@ void main() {
 
       // Assert
       expect(bitmapDescriptor, isA<GoogleMapsPlatformBitmapDescriptor>());
-    });
+    }, skip: !kIsWeb,);
 
     test('should create a GoogleMapsPlatformCameraUpdate when calling createPlatformCameraUpdate', () {
       // Act
@@ -52,6 +53,6 @@ void main() {
 
       // Assert
       expect(cameraUpdate, isA<GoogleMapsPlatformCameraUpdate>());
-    });
+    }, skip: !kIsWeb,);
   });
 }
