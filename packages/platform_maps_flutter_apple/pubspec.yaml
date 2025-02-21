@@ -4,6 +4,7 @@ version: 1.0.0-beta
 homepage: https://github.com/albert-heijn-technology
 repository: https://github.com/albert-heijn-technology/platform_maps_flutter/tree/master/packages/platform_maps_flutter_apple
 issue_tracker: https://github.com/albert-heijn-technology/platform_maps_flutter/issues
+publish_to: none
 
 environment:
   sdk: '>=3.2.4 <4.0.0'
@@ -20,8 +21,16 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  apple_maps_flutter: ^1.3.0
-  platform_maps_flutter_platform_interface: ^1.0.0-beta
+  # apple_maps_flutter:
+  #   git: https://github.com/vlad0209/apple_maps_flutter.git
+  # platform_maps_flutter_platform_interface:
+  #   git:
+  #     url: https://github.com/vlad0209/platform_maps_flutter.git
+  #     path: packages/platform_maps_flutter_platform_interface
+  apple_maps_flutter:
+    path: ../../../apple_maps_flutter/
+  platform_maps_flutter_platform_interface:
+    path: ../platform_maps_flutter_platform_interface/
 
 dev_dependencies:
   flutter_test:

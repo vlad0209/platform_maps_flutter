@@ -30,6 +30,9 @@ class PlatformMap extends StatelessWidget {
     this.onCameraIdle,
     this.onTap,
     this.onLongPress,
+    this.style,
+    this.mapToolbarEnabled = true,
+    this.elevationStyle = ElevationStyle.flat,
   }) : _platform = PlatformMapsPlatformWidget(
           PlatformMapsPlatformWidgetCreationParams(
             compassEnabled: compassEnabled,
@@ -43,6 +46,7 @@ class PlatformMap extends StatelessWidget {
             onCameraMove: onCameraMove,
             onCameraMoveStarted: onCameraMoveStarted,
             onLongPress: onLongPress,
+            onMapCreated: onMapCreated,
             onTap: onTap,
             padding: padding,
             polylines: polylines,
@@ -55,6 +59,9 @@ class PlatformMap extends StatelessWidget {
             trafficEnabled: trafficEnabled,
             zoomControlsEnabled: zoomControlsEnabled,
             zoomGesturesEnabled: zoomGesturesEnabled,
+            style: style,
+            mapToolbarEnabled: mapToolbarEnabled,
+            elevationStyle: elevationStyle,
           ),
         );
 
@@ -189,6 +196,25 @@ class PlatformMap extends StatelessWidget {
   /// were not claimed by any other gesture recognizer.
   final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
+  /// The style for the Google map.
+  ///
+  /// Set to null to clear any previous custom styling.
+  ///
+  /// If problems were detected with the [mapStyle], including un-parsable
+  /// styling JSON, unrecognized feature type, unrecognized element type, or
+  /// invalid styler keys, the style is left unchanged, and the error can be
+  /// retrieved with [GoogleMapController.getStyleError].
+  ///
+  /// The style string can be generated using the
+  /// [map style tool](https://mapstyle.withgoogle.com/).
+  final String? style;
+
+  /// True if the map should show a toolbar when you interact with the map. Android only.
+  final bool mapToolbarEnabled;
+
+  final ElevationStyle elevationStyle;
+
+  // One of the MKMapConfiguration.ElevationStyle elevation styles. iOS only.
   final PlatformMapsPlatformWidget _platform;
 
   @override

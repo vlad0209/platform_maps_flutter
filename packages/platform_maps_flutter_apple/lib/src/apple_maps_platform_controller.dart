@@ -5,6 +5,7 @@ import 'package:platform_maps_flutter_apple/src/apple_maps_camera_update.dart';
 import 'package:platform_maps_flutter_apple/src/mapper_extensions.dart';
 import 'package:platform_maps_flutter_platform_interface/platform_maps_flutter_platform_interface.dart';
 
+
 class AppleMapsPlatformController extends PlatformMapsPlatformController {
   AppleMapsPlatformController(this._appleMapController);
   final apple_maps.AppleMapController _appleMapController;
@@ -58,5 +59,23 @@ class AppleMapsPlatformController extends PlatformMapsPlatformController {
   @override
   Future<Uint8List?> takeSnapshot() {
     return _appleMapController.takeSnapshot();
+  }
+
+  @override
+  Future<void> lookAround(
+      LatLng latLng, List<PointOfInterestCategory> poiFilter,) async {
+    return _appleMapController.lookAround(
+        apple_maps.LatLng(latLng.latitude, latLng.longitude),
+        poiFilter
+            .map((e) => apple_maps.PointOfInterestCategory.values[e.index])
+            .toList(),);
+  }
+
+  @override
+  Future<bool> isLookAroundAvailable(LatLng latLng) async {
+    return (await _appleMapController.isLookAroundAvailable(
+          apple_maps.LatLng(latLng.latitude, latLng.longitude),
+        )) ??
+        false;
   }
 }

@@ -153,6 +153,10 @@ class _PlatformMap extends StatefulWidget {
   /// were not claimed by any other gesture recognizer.
   Set<Factory<OneSequenceGestureRecognizer>> get gestureRecognizers =>
       params.gestureRecognizers;
+
+  ElevationStyle get elevationStyle => params.elevationStyle;
+
+  
   @override
   _PlatformMapState createState() => _PlatformMapState();
 }
@@ -185,6 +189,7 @@ class _PlatformMapState extends State<_PlatformMap> {
       onLongPress: _onLongPress,
       trafficEnabled: widget.trafficEnabled,
       minMaxZoomPreference: widget.minMaxZoomPreference.appleMapsZoomPreference,
+      elevationStyle: _getElevationStyle(),
     );
   }
 
@@ -213,5 +218,9 @@ class _PlatformMapState extends State<_PlatformMap> {
       case MapType.hybrid:
         return apple_maps.MapType.hybrid;
     }
+  }
+
+  apple_maps.ElevationStyle _getElevationStyle() {
+    return apple_maps.ElevationStyle.values[widget.elevationStyle.index];
   }
 }

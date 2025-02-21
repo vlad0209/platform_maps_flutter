@@ -18,4 +18,5 @@ export 'package:platform_maps_flutter_platform_interface/platform_maps_flutter_p
         PlatformMap,
         PlatformMapController,
         Polygon,
-        Polyline;
+        Polyline,
+        ElevationStyle;

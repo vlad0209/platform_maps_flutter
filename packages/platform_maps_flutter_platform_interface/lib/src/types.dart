@@ -15,3 +15,5 @@ export 'types/platform_maps_platform_widget_creation_params.dart';
 export 'types/pattern_item.dart';
 export 'types/polygon.dart';
 export 'types/polyline.dart';
+export 'types/elevation_style.dart';
+export 'types/point_of_interest_category.dart';

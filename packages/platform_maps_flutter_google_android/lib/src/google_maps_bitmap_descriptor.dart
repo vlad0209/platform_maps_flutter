@@ -14,7 +14,7 @@ class GoogleMapsPlatformBitmapDescriptor extends PlatformBitmapDescriptor {
     AssetBundle? bundle,
     String? package,
   }) async {
-    final descriptor = await google_maps.BitmapDescriptor.fromAssetImage(
+    final descriptor = await google_maps.BitmapDescriptor.asset(
       configuration,
       assetName,
       bundle: bundle,
@@ -26,7 +26,7 @@ class GoogleMapsPlatformBitmapDescriptor extends PlatformBitmapDescriptor {
   @override
   GoogleMapsBitmapDescriptor fromBytes(Uint8List byteData) {
     return GoogleMapsBitmapDescriptor(
-      google_maps.BitmapDescriptor.fromBytes(byteData),
+      google_maps.BitmapDescriptor.bytes(byteData),
     );
   }
 }

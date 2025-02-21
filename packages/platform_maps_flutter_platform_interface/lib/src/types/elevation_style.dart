@@ -1,0 +1,4 @@
+enum ElevationStyle {
+  flat,
+  realistic
+}

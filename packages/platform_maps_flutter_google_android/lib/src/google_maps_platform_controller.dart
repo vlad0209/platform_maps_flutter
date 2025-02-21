@@ -60,4 +60,14 @@ class GoogleMapsPlatformController extends PlatformMapsPlatformController {
   Future<Uint8List?> takeSnapshot() {
     return _googleMapController.takeSnapshot();
   }
+  
+  @override
+  Future<void> lookAround(LatLng latLng, List<PointOfInterestCategory> poiFilter) {
+    throw UnsupportedError('lookAround is not supported on Google Maps');
+  }
+  
+  @override
+  Future<bool> isLookAroundAvailable(LatLng latLng) {
+    throw UnimplementedError('lookAround is not supported on Google Maps');
+  }
 }

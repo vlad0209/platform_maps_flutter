@@ -156,6 +156,23 @@ class _PlatformMap extends StatefulWidget {
   /// were not claimed by any other gesture recognizer.
   Set<Factory<OneSequenceGestureRecognizer>> get gestureRecognizers =>
       params.gestureRecognizers;
+  
+  /// The style for the Google map.
+  ///
+  /// Set to null to clear any previous custom styling.
+  ///
+  /// If problems were detected with the [mapStyle], including un-parsable
+  /// styling JSON, unrecognized feature type, unrecognized element type, or
+  /// invalid styler keys, the style is left unchanged, and the error can be
+  /// retrieved with [GoogleMapController.getStyleError].
+  ///
+  /// The style string can be generated using the
+  /// [map style tool](https://mapstyle.withgoogle.com/).
+  String? get style => params.style;
+
+  /// True if the map should show a toolbar when you interact with the map. Android only.
+  bool get mapToolbarEnabled => params.mapToolbarEnabled;
+
   @override
   _PlatformMapState createState() => _PlatformMapState();
 }
@@ -190,6 +207,8 @@ class _PlatformMapState extends State<_PlatformMap> {
       trafficEnabled: widget.trafficEnabled,
       minMaxZoomPreference:
           widget.minMaxZoomPreference.googleMapsZoomPreference,
+      style: widget.style,
+      mapToolbarEnabled: widget.mapToolbarEnabled,
     );
   }
 
