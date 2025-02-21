@@ -1,0 +1,39 @@
+name: platform_maps_flutter_google_web
+description: Web Google Maps implementation for the platform_maps_flutter plugin.
+version: 1.0.0-beta
+homepage: https://github.com/albert-heijn-technology
+issue_tracker: https://github.com/albert-heijn-technology/platform_maps_flutter/issues
+publish_to: none
+
+environment:
+  sdk: '>=3.2.4 <4.0.0'
+  flutter: ">=1.17.0"
+
+flutter:
+  plugin:
+    implements: platform_maps_flutter
+    platforms:
+      web:
+        pluginClass: PlatformMapsGoogleWeb
+        fileName: platform_maps_flutter_google_web.dart
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  google_maps_flutter_platform_interface: ^2.6.0
+  # platform_maps_flutter_platform_interface:
+  #   git:
+  #     url: https://github.com/vlad0209/platform_maps_flutter.git
+  #     path: packages/platform_maps_flutter_platform_interface/
+  google_maps_flutter_web: ^0.5.10
+  platform_maps_flutter_platform_interface:
+    path: ../platform_maps_flutter_platform_interface/
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  mockito: ^5.4.2
+

@@ -17,6 +17,8 @@ flutter:
         default_package: platform_maps_flutter_google_android
       ios:
         default_package: platform_maps_flutter_apple
+      web:
+        default_package: platform_maps_flutter_google_web
 
 dependencies:
   flutter:
@@ -38,6 +40,8 @@ dependencies:
     path: ../platform_maps_flutter_apple/
   platform_maps_flutter_google_android:
     path: ../platform_maps_flutter_google_android/
+  platform_maps_flutter_google_web:
+    path: ../platform_maps_flutter_google_web/
   platform_maps_flutter_platform_interface:
     path: ../platform_maps_flutter_platform_interface/
 
