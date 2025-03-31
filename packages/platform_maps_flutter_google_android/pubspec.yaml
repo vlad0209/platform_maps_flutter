@@ -23,12 +23,12 @@ dependencies:
     sdk: flutter
   google_maps_flutter_android: ^2.7.0
   google_maps_flutter_platform_interface: ^2.6.0
-  # platform_maps_flutter_platform_interface:
-  #   git:
-  #     url: https://github.com/vlad0209/platform_maps_flutter.git
-  #     path: packages/platform_maps_flutter_platform_interface/
   platform_maps_flutter_platform_interface:
-    path: ../platform_maps_flutter_platform_interface/
+    git:
+      url: https://github.com/vlad0209/platform_maps_flutter.git
+      path: packages/platform_maps_flutter_platform_interface/
+  # platform_maps_flutter_platform_interface:
+  #   path: ../platform_maps_flutter_platform_interface/
 
 dev_dependencies:
   flutter_test:

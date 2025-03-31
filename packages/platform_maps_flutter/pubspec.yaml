@@ -24,26 +24,26 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # platform_maps_flutter_apple:
-  #   git:
-  #     url: https://github.com/vlad0209/platform_maps_flutter.git
-  #     path: packages/platform_maps_flutter_apple/
-  # platform_maps_flutter_google_android:
-  #   git:
-  #     url: https://github.com/vlad0209/platform_maps_flutter.git
-  #     path: packages/platform_maps_flutter_google_android/
-  # platform_maps_flutter_platform_interface:
-  #   git:
-  #     url: https://github.com/vlad0209/platform_maps_flutter.git
-  #     path: packages/platform_maps_flutter_platform_interface/
   platform_maps_flutter_apple:
-    path: ../platform_maps_flutter_apple/
+    git:
+      url: https://github.com/vlad0209/platform_maps_flutter.git
+      path: packages/platform_maps_flutter_apple/
   platform_maps_flutter_google_android:
-    path: ../platform_maps_flutter_google_android/
-  platform_maps_flutter_google_web:
-    path: ../platform_maps_flutter_google_web/
+    git:
+      url: https://github.com/vlad0209/platform_maps_flutter.git
+      path: packages/platform_maps_flutter_google_android/
   platform_maps_flutter_platform_interface:
-    path: ../platform_maps_flutter_platform_interface/
+    git:
+      url: https://github.com/vlad0209/platform_maps_flutter.git
+      path: packages/platform_maps_flutter_platform_interface/
+  # platform_maps_flutter_apple:
+  #   path: ../platform_maps_flutter_apple/
+  # platform_maps_flutter_google_android:
+  #   path: ../platform_maps_flutter_google_android/
+  # platform_maps_flutter_google_web:
+  #   path: ../platform_maps_flutter_google_web/
+  # platform_maps_flutter_platform_interface:
+  #   path: ../platform_maps_flutter_platform_interface/
 
 dev_dependencies:
   flutter_lints: ^4.0.0
